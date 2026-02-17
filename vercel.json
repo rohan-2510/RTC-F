@@ -1,7 +1,3 @@
-# Vercel Configuration
-# This file is optional - Vercel auto-detects Vite projects
-# Only needed if you want to customize build settings
-
 {
     "buildCommand": "npm run build",
     "outputDirectory": "dist",
