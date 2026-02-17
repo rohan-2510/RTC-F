@@ -1,0 +1,21 @@
+COACH PHOTO PLACEHOLDER
+
+To add the coach photo:
+1. Take or obtain a professional photo of your head coach
+2. Rename it to: coach-photo.jpg
+3. Place it in this directory (frontend/public/)
+4. The photo will automatically appear on the home page
+
+Recommended photo specifications:
+- Format: JPG or PNG
+- Dimensions: At least 800x800 pixels (square or portrait orientation works best)
+- Professional quality with good lighting
+- Coach wearing Taekwondo uniform (dobok) with black belt
+- Clean background preferred
+
+Alternative: You can use a free stock photo from sites like:
+- Unsplash.com
+- Pexels.com
+- Pixabay.com
+
+Search terms: "taekwondo instructor", "martial arts coach", "taekwondo master"

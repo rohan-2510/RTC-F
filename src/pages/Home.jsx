@@ -74,6 +74,49 @@ const Home = () => {
                 </div>
             </section>
 
+            {/* Coach Section */}
+            <section className="py-16 bg-white">
+                <div className="container mx-auto px-4">
+                    <h2 className="heading-section">Meet Our Head Coach</h2>
+                    <div className="max-w-4xl mx-auto bg-light rounded-lg shadow-lg overflow-hidden">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-8">
+                            <div className="flex justify-center items-center">
+                                <img
+                                    src="/coach-photo.jpg"
+                                    alt="Head Coach"
+                                    className="rounded-lg shadow-md w-full h-auto object-cover"
+                                />
+                            </div>
+                            <div className="flex flex-col justify-center">
+                                <h3 className="text-3xl font-bold mb-2 text-secondary">Master Jaiddip Desae</h3>
+                                <p className="text-primary font-semibold mb-4">4th Dan Black Belt | Head Instructor</p>
+                                <div className="space-y-3 text-gray-700">
+                                    <p className="flex items-start">
+                                        <span className="text-primary mr-2">•</span>
+                                        <span>15+ years of teaching experience</span>
+                                    </p>
+                                    <p className="flex items-start">
+                                        <span className="text-primary mr-2">•</span>
+                                        <span>Certified by World Taekwondo Federation (WTF)</span>
+                                    </p>
+                                    <p className="flex items-start">
+                                        <span className="text-primary mr-2">•</span>
+                                        <span>Former National Level Competitor</span>
+                                    </p>
+                                    <p className="flex items-start">
+                                        <span className="text-primary mr-2">•</span>
+                                        <span>Specialized in youth development and self-defense training</span>
+                                    </p>
+                                </div>
+                                <p className="mt-4 text-gray-600 italic">
+                                    "My mission is to empower every student with the skills, discipline, and confidence to succeed both on and off the mat."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Testimonials */}
             <section className="py-16 bg-secondary text-white">
                 <div className="container mx-auto px-4">
