@@ -2,6 +2,7 @@ const images = [
     // Add your AWS S3 image URLs here, for example:
     // { id: 1, imageUrl: 'https://your-bucket.s3.amazonaws.com/photo1.jpg', title: 'Training Session', category: 'Training' },
     // { id: 2, imageUrl: 'https://your-bucket.s3.amazonaws.com/photo2.jpg', title: 'Belt Ceremony', category: 'Events' },
+    { id: 1, imageUrl: 'https://i.imgur.com/hcEuEBC.jpeg', title: 'Sarkar', category: 'Taekwondo' }
 ];
 
 const Gallery = () => {
@@ -29,7 +30,7 @@ const Gallery = () => {
                                     <img
                                         src={img.imageUrl}
                                         alt={img.title}
-                                        className="w-full h-full object-cover transform group-hover:scale-110 transition duration-500"
+                                        className="w-center h-center object-cover transform group-hover:scale-110 transition duration-500"
                                     />
                                     <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition duration-300 flex items-end">
                                         <div className="p-4 w-full translate-y-full group-hover:translate-y-0 transition duration-300">
