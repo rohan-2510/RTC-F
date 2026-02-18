@@ -1,5 +1,5 @@
 import { FaFacebook, FaInstagram, FaWhatsapp, FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
-import { HashLink } from 'react-router-hash-link';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -24,9 +24,9 @@ const Footer = () => {
                     <div>
                         <h4 className="text-lg font-bold mb-4 border-b-2 border-primary inline-block pb-1">Quick Links</h4>
                         <ul className="space-y-2">
-                            <li><HashLink smooth to="#schedule" className="text-gray-400 hover:text-white transition">Class Schedule</HashLink></li>
-                            <li><HashLink smooth to="#gallery" className="text-gray-400 hover:text-white transition">Gallery</HashLink></li>
-                            <li><HashLink smooth to="#contact" className="text-gray-400 hover:text-white transition">Contact</HashLink></li>
+                            <li><Link to="/schedule" className="text-gray-400 hover:text-white transition">Class Schedule</Link></li>
+                            <li><Link to="/gallery" className="text-gray-400 hover:text-white transition">Gallery</Link></li>
+                            <li><Link to="/contact" className="text-gray-400 hover:text-white transition">Contact</Link></li>
                         </ul>
                     </div>
 

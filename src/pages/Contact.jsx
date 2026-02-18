@@ -2,16 +2,16 @@ import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp } from 'react-icons/fa'
 
 const Contact = () => {
     return (
-        <div>
+        <div className="flex flex-col min-h-screen">
             {/* Header */}
-            <div className="bg-secondary text-white py-16">
+            <section className="bg-secondary text-white py-16">
                 <div className="container mx-auto px-4 text-center">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h2>
+                    <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
                     <p className="text-xl text-gray-300">We'd love to hear from you.</p>
                 </div>
-            </div>
+            </section>
 
-            <div className="py-16 bg-white">
+            <section className="py-16 bg-white flex-grow">
                 <div className="container mx-auto px-4">
                     <div className="max-w-5xl mx-auto">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
@@ -76,7 +76,7 @@ const Contact = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </div>
     );
 };

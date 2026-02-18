@@ -1,4 +1,4 @@
-import { HashLink } from 'react-router-hash-link';
+import { Link } from 'react-router-dom';
 import { FaFistRaised, FaHeart, FaBrain, FaChild, FaUserShield, FaMedal } from 'react-icons/fa';
 
 const Home = () => {
@@ -6,22 +6,21 @@ const Home = () => {
         <div className="flex flex-col">
             {/* Hero Section */}
             <section className="bg-secondary text-white py-20 lg:py-32 relative overflow-hidden">
-                {/* Background Overlay or Image could go here */}
                 <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
                 <div className="container mx-auto px-4 relative z-10 flex flex-col items-center text-center">
                     <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white uppercase tracking-wider">
                         Raibag <span className="text-primary">Taekwondo</span> Center
                     </h1>
                     <p className="text-xl md:text-2xl mb-8 max-w-2xl text-gray-200">
-                        Building Discipline, Strength & Confidence. Join the best martial arts training center in the city.
+                        Building Discipline, Strength &amp; Confidence. Join the best martial arts training center in the city.
                     </p>
                     <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                        <HashLink smooth to="#contact" className="btn-primary text-lg px-8 py-3">
+                        <Link to="/contact" className="btn-primary text-lg px-8 py-3">
                             Join Now
-                        </HashLink>
-                        <HashLink smooth to="#schedule" className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-md hover:bg-white hover:text-secondary transition duration-300 font-semibold text-lg">
+                        </Link>
+                        <Link to="/schedule" className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-md hover:bg-white hover:text-secondary transition duration-300 font-semibold text-lg">
                             View Schedule
-                        </HashLink>
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -55,21 +54,9 @@ const Home = () => {
                 <div className="container mx-auto px-4">
                     <h2 className="heading-section">Our Programs</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <ProgramCard
-                            icon={<FaChild />}
-                            title="Kids Program"
-                            desc="Fun and engaging classes for children aged 7-12, focusing on discipline and coordination."
-                        />
-                        <ProgramCard
-                            icon={<FaUserShield />}
-                            title="Teens & Adults"
-                            desc="Comprehensive training for teens and adults to build strength and self-defense skills."
-                        />
-                        <ProgramCard
-                            icon={<FaMedal />}
-                            title="Summer Camp"
-                            desc="An intensive taekwondo summer camp focused on skill development, discipline, fitness, and tournament preparation.Advanced training for those wishing to compete in local and national tournaments."
-                        />
+                        <ProgramCard icon={<FaChild />} title="Kids Program" desc="Fun and engaging classes for children aged 7-12, focusing on discipline and coordination." />
+                        <ProgramCard icon={<FaUserShield />} title="Teens & Adults" desc="Comprehensive training for teens and adults to build strength and self-defense skills." />
+                        <ProgramCard icon={<FaMedal />} title="Summer Camp" desc="An intensive taekwondo summer camp focused on skill development, discipline, fitness, and tournament preparation." />
                     </div>
                 </div>
             </section>
@@ -91,22 +78,10 @@ const Home = () => {
                                 <h3 className="text-3xl font-bold mb-2 text-secondary">Master Jaidipp Desae</h3>
                                 <p className="text-primary font-semibold mb-4">4th Dan Black Belt | Head Instructor</p>
                                 <div className="space-y-3 text-gray-700">
-                                    <p className="flex items-start">
-                                        <span className="text-primary mr-2">•</span>
-                                        <span>15+ years of teaching experience</span>
-                                    </p>
-                                    <p className="flex items-start">
-                                        <span className="text-primary mr-2">•</span>
-                                        <span>Certified by World Taekwondo Federation (WTF)</span>
-                                    </p>
-                                    <p className="flex items-start">
-                                        <span className="text-primary mr-2">•</span>
-                                        <span>Former National Level Competitor</span>
-                                    </p>
-                                    <p className="flex items-start">
-                                        <span className="text-primary mr-2">•</span>
-                                        <span>Specialized in youth development and self-defense training</span>
-                                    </p>
+                                    <p className="flex items-start"><span className="text-primary mr-2">•</span><span>15+ years of teaching experience</span></p>
+                                    <p className="flex items-start"><span className="text-primary mr-2">•</span><span>Certified by World Taekwondo Federation (WTF)</span></p>
+                                    <p className="flex items-start"><span className="text-primary mr-2">•</span><span>Former National Level Competitor</span></p>
+                                    <p className="flex items-start"><span className="text-primary mr-2">•</span><span>Specialized in youth development and self-defense training</span></p>
                                 </div>
                                 <p className="mt-4 text-gray-600 italic">
                                     "My mission is to empower every student with the skills, discipline, and confidence to succeed both on and off the mat."
@@ -124,21 +99,9 @@ const Home = () => {
                         Student Stories
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <Testimonial
-                            text="RTC Taekwondo has changed my life. I more confident and focused."
-                            author="Partana J Desae"
-                            role="Student"
-                        />
-                        <Testimonial
-                            text="Great instructors and a welcoming community. "
-                            author="Karan J Desae"
-                            role="Student"
-                        />
-                        <Testimonial
-                            text="The discipline I learned here helped me achieve my black belt and excel in my career."
-                            author="Emily R."
-                            role="Alumni"
-                        />
+                        <Testimonial text="RTC Taekwondo has changed my life. I am more confident and focused." author="Partana J Desae" role="Student" />
+                        <Testimonial text="Great instructors and a welcoming community." author="Karan J Desae" role="Student" />
+                        <Testimonial text="The discipline I learned here helped me achieve my black belt and excel in my career." author="Emily R." role="Alumni" />
                     </div>
                 </div>
             </section>
@@ -148,9 +111,9 @@ const Home = () => {
                 <div className="container mx-auto px-4">
                     <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Start Your Journey?</h2>
                     <p className="text-xl mb-8 max-w-2xl mx-auto">Book a free trial class today and see the difference for yourself.</p>
-                    <HashLink smooth to="#contact" className="bg-white text-primary px-8 py-3 rounded-md hover:bg-gray-100 transition duration-300 font-bold text-lg">
+                    <Link to="/contact" className="bg-white text-primary px-8 py-3 rounded-md hover:bg-gray-100 transition duration-300 font-bold text-lg">
                         Get Started Today
-                    </HashLink>
+                    </Link>
                 </div>
             </section>
         </div>
