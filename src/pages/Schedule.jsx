@@ -1,7 +1,7 @@
 const Schedule = () => {
     return (
         <div className="container mx-auto px-4 py-8">
-            <h1 className="heading-section">Class Schedule</h1>
+            <h2 className="heading-section">Class Schedule</h2>
             <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
                 Join us for our regular training sessions. We offer both morning and evening classes to fit your schedule.
             </p>
@@ -15,7 +15,7 @@ const Schedule = () => {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                             </svg>
                         </div>
-                        <h2 className="text-3xl font-bold text-gray-800">Monday to Saturday</h2>
+                        <h3 className="text-3xl font-bold text-gray-800">Monday to Saturday</h3>
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-6">
@@ -25,7 +25,7 @@ const Schedule = () => {
                                 <svg className="w-8 h-8 text-orange-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                                 </svg>
-                                <h3 className="text-xl font-bold text-gray-800">Morning Session</h3>
+                                <h4 className="text-xl font-bold text-gray-800">Morning Session</h4>
                             </div>
                             <div className="flex items-center justify-center">
                                 <div className="text-center">
@@ -41,7 +41,7 @@ const Schedule = () => {
                                 <svg className="w-8 h-8 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                                 </svg>
-                                <h3 className="text-xl font-bold text-gray-800">Evening Session</h3>
+                                <h4 className="text-xl font-bold text-gray-800">Evening Session</h4>
                             </div>
                             <div className="flex items-center justify-center">
                                 <div className="text-center">
@@ -65,9 +65,9 @@ const Schedule = () => {
                         <svg className="w-10 h-10 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                        <h2 className="text-3xl font-bold">Sunday</h2>
+                        <h3 className="text-3xl font-bold">Sunday</h3>
                     </div>
-                    <p className="text-center text-2xl font-semibold">Holiday - Rest & Recovery</p>
+                    <p className="text-center text-2xl font-semibold">Holiday - Rest &amp; Recovery</p>
                     <p className="text-center mt-3 text-green-100">
                         Take time to rest and let your body recover. We'll see you on Monday!
                     </p>
@@ -80,7 +80,7 @@ const Schedule = () => {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                         <div>
-                            <h3 className="font-bold text-gray-800 mb-2">Important Information</h3>
+                            <h4 className="font-bold text-gray-800 mb-2">Important Information</h4>
                             <ul className="text-gray-700 space-y-1">
                                 <li>• Please arrive 10 minutes early for warm-up</li>
                                 <li>• Bring your own water bottle</li>
@@ -94,4 +94,5 @@ const Schedule = () => {
         </div>
     );
 };
+
 export default Schedule;

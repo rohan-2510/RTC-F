@@ -1,5 +1,5 @@
 import { FaFacebook, FaInstagram, FaWhatsapp, FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 const Footer = () => {
     return (
@@ -24,11 +24,9 @@ const Footer = () => {
                     <div>
                         <h4 className="text-lg font-bold mb-4 border-b-2 border-primary inline-block pb-1">Quick Links</h4>
                         <ul className="space-y-2">
-
-                            <li><Link to="/schedule" className="text-gray-400 hover:text-white transition">Class Schedule</Link></li>
-                            <li><Link to="/gallery" className="text-gray-400 hover:text-white transition">Gallery</Link></li>
-                            <li><Link to="/contact" className="text-gray-400 hover:text-white transition">Contact</Link></li>
-                            <li><Link to="/login" className="text-gray-400 hover:text-white transition">Student Portal</Link></li>
+                            <li><HashLink smooth to="#schedule" className="text-gray-400 hover:text-white transition">Class Schedule</HashLink></li>
+                            <li><HashLink smooth to="#gallery" className="text-gray-400 hover:text-white transition">Gallery</HashLink></li>
+                            <li><HashLink smooth to="#contact" className="text-gray-400 hover:text-white transition">Contact</HashLink></li>
                         </ul>
                     </div>
 
@@ -37,7 +35,7 @@ const Footer = () => {
                         <h4 className="text-lg font-bold mb-4 border-b-2 border-primary inline-block pb-1">Our Programs</h4>
                         <ul className="space-y-2">
                             <li className="text-gray-400">Kids Taekwondo (7-12 yrs)</li>
-                            <li className="text-gray-400">Teens & Adults</li>
+                            <li className="text-gray-400">Teens &amp; Adults</li>
                             <li className="text-gray-400">Self Defense</li>
                             <li className="text-gray-400">Personality Development</li>
                             <li className="text-gray-400">Summer camp</li>
@@ -50,7 +48,7 @@ const Footer = () => {
                         <ul className="space-y-3">
                             <li className="flex items-start text-gray-400">
                                 <FaMapMarkerAlt className="mt-1 mr-2 text-primary" />
-                                <span>Mahadev Mangal Karyalay,<br />Siddheshwar Galli,Raibag-591317</span>
+                                <span>Mahadev Mangal Karyalay,<br />Siddheshwar Galli, Raibag-591317</span>
                             </li>
                             <li className="flex items-center text-gray-400">
                                 <FaPhone className="mr-2 text-primary" />
