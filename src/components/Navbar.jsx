@@ -15,7 +15,7 @@ const Navbar = () => {
         <nav className="bg-white shadow-md sticky top-0 z-50">
             <div className="container mx-auto px-4 py-3 flex justify-between items-center">
                 {/* Logo */}
-                <img src="src\assets\logo.jpeg" alt="Logo" className="h-14" />
+                <img src="\logo.jpeg" alt="Logo" className="h-14" />
 
                 {/* Nav Links — always visible */}
                 <div className="flex space-x-2 sm:space-x-6 items-center">
