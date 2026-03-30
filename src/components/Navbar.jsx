@@ -15,9 +15,7 @@ const Navbar = () => {
         <nav className="bg-white shadow-md sticky top-0 z-50">
             <div className="container mx-auto px-4 py-3 flex justify-between items-center">
                 {/* Logo */}
-                <Link to="/" className="text-xl font-bold text-primary">
-                    RTC
-                </Link>
+                <img src="src\assets\logo.jpeg" alt="Logo" className="h-14" />
 
                 {/* Nav Links — always visible */}
                 <div className="flex space-x-2 sm:space-x-6 items-center">
@@ -26,8 +24,8 @@ const Navbar = () => {
                             key={link.name}
                             to={link.path}
                             className={`text-sm sm:text-base font-medium transition px-1 sm:px-0 ${isActive(link.path)
-                                    ? 'text-primary border-b-2 border-primary'
-                                    : 'text-secondary hover:text-primary'
+                                ? 'text-primary border-b-2 border-primary'
+                                : 'text-secondary hover:text-primary'
                                 }`}
                         >
                             {link.name}

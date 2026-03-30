@@ -5,6 +5,8 @@ import Home from './pages/Home';
 import Schedule from './pages/Schedule';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
+import CoachWidget from './components/CoachWidget';
+
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        <CoachWidget />
       </div>
     </Router>
   );

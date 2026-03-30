@@ -1,4 +1,4 @@
-import { FaFacebook, FaInstagram, FaWhatsapp, FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaMapMarkerAlt, FaPhone, FaEnvelope, FaYoutube } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -16,7 +16,7 @@ const Footer = () => {
                         <div className="flex space-x-4">
                             <a href="#" className="text-white hover:text-primary transition"><FaFacebook size={24} /></a>
                             <a href="#" className="text-white hover:text-primary transition"><FaInstagram size={24} /></a>
-                            <a href="#" className="text-white hover:text-primary transition"><FaWhatsapp size={24} /></a>
+                            <a href="#" className="text-white hover:text-primary transition"><FaYoutube size={24} /></a>
                         </div>
                     </div>
 
