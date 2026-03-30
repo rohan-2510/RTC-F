@@ -23,10 +23,10 @@ const Coach = () => {
                             />
                         ))}
                     </div>
-                    
+
                     {/* Formatted Text Centered Below */}
                     <h1 className="text-4xl md:text-5xl font-extrabold mb-2 uppercase tracking-tight text-secondary">Master Jaidipp Desae</h1>
-                    <p className="text-xl md:text-2xl text-primary font-bold tracking-wider">4th Dan Black Belt</p>
+                    <p className="text-xl md:text-2xl text-primary font-bold tracking-wider">3rd Dan Black Belt</p>
                     <blockquote className="mt-12 bg-light p-8 rounded-xl shadow-inner border-l-4 border-primary italic text-xl text-gray-700">
                         "My mission is to empower every student with the skills, discipline, and confidence to succeed both on and off the mat."
                         <footer className="text-sm font-bold text-secondary not-italic mt-4">— Master Jaidipp Desae</footer>

@@ -15,7 +15,7 @@ const Home = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
-        }, 5000); // Change image every 5 seconds
+        }, 2000); // Change image every 5 seconds
 
         return () => clearInterval(interval);
     }, []);
@@ -24,8 +24,12 @@ const Home = () => {
         <div className="flex flex-col">
             {/* Hero Section */}
             <section className="bg-light relative min-h-[90vh] lg:min-h-[85vh] flex flex-col lg:block items-center overflow-hidden pt-16 lg:pt-0">
-                {/* Background Image Slider (Top on mobile, Anchored right on desktop) */}
-                <div className="relative w-full h-[40vh] sm:h-[50vh] lg:absolute lg:top-0 lg:right-0 lg:w-[56%] lg:h-[85%] z-0 bg-light shadow-inner lg:shadow-none mb-8 lg:mb-0">
+                {/* Background Image Slider (Native ratio on mobile, Anchored right on desktop) */}
+                <div className="relative w-full lg:absolute lg:top-0 lg:right-0 lg:w-[56%] lg:h-[85%] z-0 bg-light shadow-inner lg:shadow-none mb-8 lg:mb-0">
+
+                    {/* Ghost image natively expands the parent container to the exact true height/width aspect ratio of the photos */}
+                    <img src={heroImages[0]} alt="Spacer" className="w-full h-auto invisible block pointer-events-none lg:hidden" />
+
                     {heroImages.map((image, index) => (
                         <div
                             key={index}
