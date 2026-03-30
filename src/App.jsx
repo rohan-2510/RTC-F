@@ -2,11 +2,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import Schedule from './pages/Schedule';
+import Coach from './pages/Coach';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
-import CoachWidget from './components/CoachWidget';
-
 
 function App() {
   return (
@@ -16,13 +14,12 @@ function App() {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/schedule" element={<Schedule />} />
+            <Route path="/coach" element={<Coach />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
         <Footer />
-        <CoachWidget />
       </div>
     </Router>
   );

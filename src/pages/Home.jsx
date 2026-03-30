@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FaFistRaised, FaHeart, FaBrain, FaChild, FaUserShield, FaMedal, FaChartLine, FaBullseye, FaUsers, FaUserTie, FaTrophy } from 'react-icons/fa';
+import { FaFistRaised, FaHeart, FaBrain, FaChild, FaUserShield, FaMedal, FaChartLine, FaBullseye, FaUsers, FaUserTie, FaTrophy, FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
 
 const heroImages = [
     '/slide1.jpeg',
@@ -23,57 +23,62 @@ const Home = () => {
     return (
         <div className="flex flex-col">
             {/* Hero Section */}
-            <section className="bg-light relative pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden">
-                <div className="container mx-auto px-4 relative z-10">
-                    <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+            <section className="bg-light relative min-h-[90vh] lg:min-h-[85vh] flex flex-col lg:block items-center overflow-hidden pt-16 lg:pt-0">
+                {/* Background Image Slider (Top on mobile, Anchored right on desktop) */}
+                <div className="relative w-full h-[40vh] sm:h-[50vh] lg:absolute lg:top-0 lg:right-0 lg:w-[56%] lg:h-[85%] z-0 bg-light shadow-inner lg:shadow-none mb-8 lg:mb-0">
+                    {heroImages.map((image, index) => (
+                        <div
+                            key={index}
+                            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'}`}
+                        >
+                            <img
+                                src={image}
+                                alt={`Hero Background ${index + 1}`}
+                                className="w-full h-full object-cover lg:object-fill opacity-100"
+                            />
+                        </div>
+                    ))}
+                </div>
 
-                        {/* Left Content Area */}
-                        <div className="w-full lg:w-1/2 flex flex-col items-start text-left z-10">
-                            <h3 className="text-primary font-bold mb-2 uppercase tracking-wide">Welcome to</h3>
-                            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight text-secondary uppercase">
-                                Raibag <span className="text-primary">Taekwondo</span> Center
-                            </h1>
-                            <p className="text-gray-600 text-lg md:text-xl mb-10 max-w-lg leading-relaxed">
-                                Building Discipline, Strength &amp; Confidence. Join the best martial arts training center in the city.
-                            </p>
+                <div className="container mx-auto px-4 relative z-10 pt-8 pb-28 lg:py-32 flex flex-col lg:block">
+                    {/* Text block (Flows naturally on mobile, contained to left on desktop) */}
+                    <div className="w-full lg:w-3/5 xl:w-1/2 flex flex-col items-center text-center lg:items-start lg:text-left z-10 lg:-translate-y-32">
+                        <img src="/logo1.png" alt="Logo" className="h-32 md:h-36 mb-0 drop-shadow-md transition-transform hover:scale-105 translate-x-2 sm:translate-x-0 lg:-translate-x-6" />
+                        <h3 className="text-primary font-extrabold mb-2 uppercase tracking-wider drop-shadow-sm">Welcome to</h3>
+                        <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 tracking-tight text-secondary uppercase drop-shadow-sm">
+                            Raibag <span className="text-primary">Taekwondo</span> Center
+                        </h1>
+                        <p className="text-gray-600 text-lg md:text-xl mb-10 max-w-lg leading-relaxed drop-shadow-sm">
+                            Building Discipline, Strength &amp; Confidence. Join the best martial arts training center in the city.
+                        </p>
 
-                            <div className="flex flex-col sm:flex-row items-center gap-4 mb-12">
-                                <Link to="/contact" className="btn-primary text-lg px-8 py-3">
-                                    Join Now
-                                </Link>
-                                <a href="#programs" className="bg-transparent border-2 border-primary text-primary px-8 py-3 rounded-md hover:bg-primary hover:text-white transition duration-300 font-semibold text-lg">
-                                    Explore Programs
-                                </a>
-                            </div>
+                        <div className="flex flex-col sm:flex-row flex-wrap items-center gap-4 mb-12">
+                            <Link to="/contact" className="btn-primary text-lg px-8 py-3 shadow hover:shadow-primary/50">
+                                Join Now
+                            </Link>
+                            <a href="#programs" className="bg-transparent border-2 border-primary text-primary px-8 py-3 rounded-md hover:bg-primary hover:text-white transition duration-300 font-semibold text-lg shadow">
+                                Explore Programs
+                            </a>
+                            <Link to="/coach" className="bg-transparent border-2 border-primary text-primary px-8 py-3 rounded-md hover:bg-primary hover:text-white transition duration-300 font-semibold text-lg shadow">
+                                Know your Coach
+                            </Link>
 
-                            {/* Stats Cards (Outline from reference image) */}
-                            <div className="flex flex-wrap gap-4 w-full">
-                                <div className="bg-white px-4 py-3 rounded shadow-sm flex items-center gap-3 border border-gray-200 min-w-[150px]">
-                                    <FaBullseye className="text-primary text-xl" />
-                                    <p className="text-gray-600 text-xs font-semibold whitespace-nowrap"><span className="text-secondary font-bold text-sm">500+</span> Students</p>
-                                </div>
-                            </div>
                         </div>
 
-                        {/* Right Content Area (Image Slider) */}
-                        <div className="w-full lg:w-1/2 relative min-h-[400px] lg:min-h-[550px]">
-                            {/* Simple transparent container for the sliding images */}
-                            <div className="absolute inset-0 bg-transparent overflow-hidden flex items-center justify-center">
-                                {heroImages.map((image, index) => (
-                                    <div
-                                        key={index}
-                                        className={`absolute inset-0 transition-opacity duration-1000 ease-in-out z-0 flex items-center justify-center w-full h-full ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'}`}
-                                    >
-                                        <img
-                                            src={image}
-                                            alt={`Hero Background ${index + 1}`}
-                                            className="max-w-full max-h-full object-contain mix-blend-multiply"
-                                        />
-                                    </div>
-                                ))}
+                        {/* Stats Cards & Social Links */}
+                        <div className="flex flex-row justify-center lg:justify-start items-center gap-2 sm:gap-6 w-full mt-4 flex-wrap sm:flex-nowrap">
+                            <div className="bg-white px-3 sm:px-5 py-3 rounded-lg shadow-md flex items-center gap-2 sm:gap-3 border border-gray-100 min-w-fit">
+                                <FaBullseye className="text-primary text-xl drop-shadow-sm" />
+                                <p className="text-gray-600 text-xs font-semibold whitespace-nowrap tracking-wide"><span className="text-secondary font-extrabold text-base sm:text-lg mr-1">500+</span> Students</p>
+                            </div>
+
+                            {/* Social Media Links */}
+                            <div className="flex items-center space-x-4 sm:space-x-8 bg-white/80 backdrop-blur-sm px-3 sm:px-5 py-3 rounded-lg border border-gray-100 shadow-sm">
+                                <a href="https://www.facebook.com/share/17sTqNP3id/" aria-label="Facebook" className="text-[#1877F2] transition-colors transform hover:scale-110"><FaFacebook size={31} /></a>
+                                <a href="https://www.instagram.com/raibag_taekwondo_center?igsh=eDJhMG1iMnE5eTRv" aria-label="Instagram" className="text-[#E4405F] transition-colors transform hover:scale-110"><FaInstagram size={31} /></a>
+                                <a href="https://youtube.com/@raibagtaekwondocentre?si=BY98ZSDtxUB2blx2" aria-label="YouTube" className="text-[#FF0000] transition-colors transform hover:scale-110"><FaYoutube size={31} /></a>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </section>
@@ -82,7 +87,7 @@ const Home = () => {
             <section className="relative -mt-16 z-30 px-4">
                 <div className="container mx-auto">
                     <div className="bg-white rounded-2xl shadow-2xl shadow-gray-200/50 p-8 md:p-12 border border-gray-100">
-                        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 divide-x-0 divide-y-2 lg:divide-y-0 lg:divide-x-2 divide-gray-100">
+                        <div className="grid grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 divide-x-0 divide-y-2 lg:divide-y-0 lg:divide-x-2 divide-gray-100">
                             <div className="flex flex-col items-center justify-center text-center group cursor-default pt-4 lg:pt-0">
                                 <div className="bg-red-50 text-primary w-16 h-16 rounded-full flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform duration-300 shadow-inner">
                                     <FaUsers />
@@ -97,14 +102,6 @@ const Home = () => {
                                 </div>
                                 <h3 className="text-4xl md:text-5xl font-extrabold text-secondary mb-1 tracking-tight">1<span className="text-primary"></span></h3>
                                 <p className="text-gray-500 font-bold uppercase tracking-wider text-xs md:text-sm">Professional Coach</p>
-                            </div>
-
-                            <div className="flex flex-col items-center justify-center text-center group cursor-default pt-4 lg:pt-0">
-                                <div className="bg-red-50 text-primary w-16 h-16 rounded-full flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform duration-300 shadow-inner">
-                                    <FaChartLine />
-                                </div>
-                                <h3 className="text-4xl md:text-5xl font-extrabold text-secondary mb-1 tracking-tight">100<span className="text-primary">%</span></h3>
-                                <p className="text-gray-500 font-bold uppercase tracking-wider text-xs md:text-sm">Success Rate</p>
                             </div>
 
                             <div className="flex flex-col items-center justify-center text-center group cursor-default pt-4 lg:pt-0">
@@ -178,10 +175,10 @@ const ProgramCard = ({ image, icon, title, desc }) => (
     <div className="bg-white rounded-lg shadow-sm hover:shadow-md transition overflow-hidden border-t-4 border-primary group flex flex-col h-full relative">
         <div className="relative h-48 sm:h-56 w-full overflow-hidden bg-gray-100 flex items-center justify-center">
             {image ? (
-                <img 
-                    src={image} 
-                    alt={title} 
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                <img
+                    src={image}
+                    alt={title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex'; }}
                 />
             ) : null}
