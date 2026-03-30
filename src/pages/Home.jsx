@@ -23,7 +23,7 @@ const Home = () => {
     return (
         <div className="flex flex-col">
             {/* Hero Section */}
-            <section className="bg-light relative min-h-[90vh] lg:min-h-[85vh] flex flex-col lg:block items-center overflow-hidden pt-16 lg:pt-0">
+            <section className="bg-light relative min-h-[90vh] lg:min-h-[85vh] flex flex-col lg:block items-center overflow-hidden lg:pt-0">
                 {/* Background Image Slider (Native ratio on mobile, Anchored right on desktop) */}
                 <div className="relative w-full lg:absolute lg:top-0 lg:right-0 lg:w-[56%] lg:h-[85%] z-0 bg-light shadow-inner lg:shadow-none mb-8 lg:mb-0">
 
