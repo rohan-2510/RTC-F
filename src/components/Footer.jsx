@@ -14,9 +14,9 @@ const Footer = () => {
                             Building discipline, strength, and confidence through the art of Taekwondo. Join us to start your journey today.
                         </p>
                         <div className="flex space-x-4">
-                            <a href="#" className="text-white hover:text-primary transition"><FaFacebook size={24} /></a>
-                            <a href="#" className="text-white hover:text-primary transition"><FaInstagram size={24} /></a>
-                            <a href="#" className="text-white hover:text-primary transition"><FaYoutube size={24} /></a>
+                            <a href="https://www.facebook.com/share/17sTqNP3id/" className="text-white hover:text-primary transition"><FaFacebook size={24} /></a>
+                            <a href="https://www.instagram.com/raibag_taekwondo_center?igsh=eDJhMG1iMnE5eTRv" className="text-white hover:text-primary transition"><FaInstagram size={24} /></a>
+                            <a href="https://youtube.com/@raibagtaekwondocentre?si=BY98ZSDtxUB2blx2" className="text-white hover:text-primary transition"><FaYoutube size={24} /></a>
                         </div>
                     </div>
 
