@@ -66,7 +66,8 @@ const Home = () => {
                         <img src="/logo1.png" alt="Logo" className="h-32 md:h-36 mb-0 drop-shadow-md transition-transform hover:scale-105 translate-x-2 sm:translate-x-0 lg:-translate-x-6" />
                         <h3 className="text-primary font-extrabold mb-2 uppercase tracking-wider drop-shadow-sm text-sm md:text-base">Welcome to</h3>
                         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 tracking-tight text-secondary uppercase drop-shadow-sm font-display">
-                            Raibag <span className="text-primary">Taekwondo</span> Center
+                            Raibag <br />
+                            <span className="text-primary">Taekwondo</span> Center
                         </h1>
                         <p className="text-gray-500 text-lg md:text-xl mb-10 max-w-lg leading-relaxed">
                             Building Discipline, Strength &amp; Confidence. Join the best martial arts training center in the city.
