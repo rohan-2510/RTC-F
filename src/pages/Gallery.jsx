@@ -1,47 +1,21 @@
-const existingImages = [
-    { id: 'g1', imageUrl: '/gallery1.jpeg', title: 'Action Shot', category: 'Training' },
-    { id: 'g2', imageUrl: '/gallery2.jpeg', title: 'Sparring', category: 'Competition' },
-    { id: 'g3', imageUrl: '/gallery3.jpeg', title: 'Form Practice', category: 'Technique' },
-    { id: 'g4', imageUrl: '/gallery4.jpeg', title: 'Group Class', category: 'Academy' },
-    { id: 1, imageUrl: '/1.jpeg', title: 'Academy Moment', category: 'Training' },
-    { id: 2, imageUrl: '/2.jpeg', title: 'Academy Moment', category: 'Training' },
-    { id: 3, imageUrl: '/3.jpeg', title: 'Academy Moment', category: 'Training' },
-    { id: 4, imageUrl: '/4.jpeg', title: 'Academy Moment', category: 'Training' },
-    { id: 5, imageUrl: '/5.jpeg', title: 'Academy Moment', category: 'Training' },
-    { id: 6, imageUrl: '/6.jpeg', title: 'Academy Moment', category: 'Training' },
-    { id: 7, imageUrl: '/7.jpeg', title: 'Academy Moment', category: 'Training' },
-    { id: 8, imageUrl: '/8.jpeg', title: 'Academy Moment', category: 'Training' },
-    { id: 9, imageUrl: '/9.jpeg', title: 'Academy Moment', category: 'Training' },
-    { id: 10, imageUrl: '/10.jpeg', title: 'Academy Moment', category: 'Training' },
-    { id: 11, imageUrl: '/11.jpeg', title: 'Academy Moment', category: 'Training' },
-];
+import { useState } from 'react';
 
-const galleryFolderFiles = [
-    "WhatsApp Image 2026-03-30 at 8.04.49 PM.jpeg",
-    "WhatsApp Image 2026-03-30 at 8.04.50 PM (1).jpeg",
-    "WhatsApp Image 2026-03-30 at 8.04.50 PM (2).jpeg",
-    "WhatsApp Image 2026-03-30 at 8.04.50 PM (3).jpeg",
-    "WhatsApp Image 2026-03-30 at 8.04.50 PM.jpeg",
-    "WhatsApp Image 2026-03-30 at 8.04.51 PM (1).jpeg",
-    "WhatsApp Image 2026-03-30 at 8.04.51 PM (2).jpeg",
-    "WhatsApp Image 2026-03-30 at 8.04.51 PM (3).jpeg",
-    "WhatsApp Image 2026-03-30 at 8.04.51 PM.jpeg",
-    "WhatsApp Image 2026-03-30 at 8.04.52 PM (1).jpeg",
-    "WhatsApp Image 2026-03-30 at 8.04.52 PM (2).jpeg",
-    "WhatsApp Image 2026-03-30 at 8.04.52 PM.jpeg",
-    "WhatsApp Image 2026-03-30 at 8.04.53 PM (1).jpeg",
-    "WhatsApp Image 2026-03-30 at 8.04.53 PM (2).jpeg",
-    "WhatsApp Image 2026-03-30 at 8.04.53 PM.jpeg"
-].map((filename, index) => ({
-    id: `folder-${index}`,
-    imageUrl: `/gallery/${filename}`,
-    title: 'Training Details',
-    category: 'Gallery Edition'
-}));
+// Dynamically import all images from the public/gallery folder
+const imageModules = import.meta.glob('/public/gallery/*.{jpeg,jpg,png,gif,webp,svg,JPG,JPEG,PNG}', { eager: true });
 
-const images = [...existingImages, ...galleryFolderFiles];
+const images = Object.keys(imageModules).map((filePath, index) => {
+    // Convert the file path to a valid public URL
+    const publicUrl = filePath.replace('/public', '');
+    return {
+        id: `gallery-img-${index}`,
+        imageUrl: publicUrl,
+        title: `Gallery Image ${index + 1}`
+    };
+});
 
 const Gallery = () => {
+    const [selectedImage, setSelectedImage] = useState(null);
+
     return (
         <div className="flex flex-col min-h-screen">
             {/* Header */}
@@ -62,25 +36,48 @@ const Gallery = () => {
                     ) : (
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
                             {images.map((img) => (
-                                <div key={img.id} className="group relative overflow-hidden rounded-lg shadow-md border-2 border-gray-100 aspect-square bg-gray-50">
+                                <div
+                                    key={img.id}
+                                    className="group relative overflow-hidden rounded-lg shadow-md border-2 border-gray-100 aspect-square bg-gray-50 cursor-pointer"
+                                    onClick={() => setSelectedImage(img.imageUrl)}
+                                >
                                     <img
                                         src={img.imageUrl}
                                         alt={img.title}
                                         className="w-full h-full object-cover transform group-hover:scale-110 transition duration-500"
                                         onError={(e) => { e.target.onerror = null; e.target.src = '/logo1.png'; }}
                                     />
-                                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition duration-300 flex items-end">
-                                        <div className="p-4 w-full translate-y-full group-hover:translate-y-0 transition duration-300">
-                                            <h3 className="text-white font-bold text-lg">{img.title}</h3>
-                                            <p className="text-gray-300 text-sm">{img.category}</p>
-                                        </div>
-                                    </div>
+                                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition duration-300"></div>
                                 </div>
                             ))}
                         </div>
                     )}
                 </div>
             </section>
+
+            {/* Zoom Image Modal */}
+            {selectedImage && (
+                <div
+                    className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 p-4"
+                    onClick={() => setSelectedImage(null)}
+                >
+                    <div className="relative max-w-5xl max-h-screen w-full flex justify-center">
+                        <button
+                            className="absolute top-2 right-2 md:-top-10 md:-right-10 text-white text-4xl hover:text-gray-300 z-50 cursor-pointer"
+                            onClick={() => setSelectedImage(null)}
+                            aria-label="Close modal"
+                        >
+                            &times;
+                        </button>
+                        <img
+                            src={selectedImage}
+                            alt="Zoomed"
+                            className="max-w-full max-h-[90vh] object-contain rounded"
+                            onClick={(e) => e.stopPropagation()}
+                        />
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
