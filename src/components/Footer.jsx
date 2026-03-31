@@ -9,7 +9,7 @@ const Footer = () => {
 
                     {/* Brand & About */}
                     <div>
-                        <h3 className="text-2xl font-extrabold text-white mb-4 font-display">R<span className="text-primary">T</span>C Taekwondo</h3>
+                        <h3 className="text-2xl font-extrabold text-white mb-4 font-display">Raibag <span className='text-primary'> Taekwondo </span> Centre</h3>
                         <p className="text-gray-400 mb-6 leading-relaxed text-sm">
                             Building discipline, strength, and confidence through the art of Taekwondo. Join us to start your journey today.
                         </p>

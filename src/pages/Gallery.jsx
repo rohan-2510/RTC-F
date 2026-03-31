@@ -21,19 +21,12 @@ const Gallery = () => {
     const goPrev = () => setSelectedIndex((prev) => (prev - 1 + images.length) % images.length);
 
     return (
-        <div className="flex flex-col min-h-screen">
+        <div className="flex flex-col min-h-screen mt-8">
             {/* Header */}
-            <section className="page-header">
                 <div className="container mx-auto px-4 text-center relative z-10">
-                    <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm px-5 py-2 rounded-full mb-6">
-                        <FaImages className="text-primary" />
-                        <span className="text-sm font-semibold tracking-wider uppercase text-gray-300">Our Memories</span>
-                    </div>
                     <h1 className="text-4xl md:text-5xl font-extrabold mb-4 font-display">Photo Gallery</h1>
-                    <p className="text-xl text-gray-400 max-w-md mx-auto">Moments from our training and events</p>
-                    <div className="w-16 h-1 bg-primary rounded-full mx-auto mt-6" />
+                    <div className="w-16 h-1 bg-primary rounded-full mx-auto mt-4" />
                 </div>
-            </section>
 
             {/* Gallery Grid */}
             <section className="py-16 bg-light flex-grow">
@@ -45,7 +38,6 @@ const Gallery = () => {
                         </div>
                     ) : (
                         <>
-                            <p className="text-center text-gray-400 mb-8 text-sm font-medium">{images.length} photos • Click to enlarge</p>
                             <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto">
                                 {images.map((img, index) => (
                                     <div

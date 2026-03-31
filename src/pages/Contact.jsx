@@ -4,17 +4,14 @@ const Contact = () => {
     return (
         <div className="flex flex-col min-h-screen">
             {/* Header */}
-            <section className="page-header">
                 <div className="container mx-auto px-4 text-center relative z-10">
-                    <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm px-5 py-2 rounded-full mb-6">
+                    <div className="inline-flex items-center gap-3 bg-black/10 backdrop-blur-sm px-5 py-2 rounded-full mb-6 mt-4">
                         <FaHeadset className="text-primary" />
-                        <span className="text-sm font-semibold tracking-wider uppercase text-gray-300">Get in Touch</span>
+                        <span className="text-sm font-bold tracking-wider uppercase text-white-300">Get in Touch</span>
                     </div>
-                    <h1 className="text-4xl md:text-5xl font-extrabold mb-4 font-display">Contact Us</h1>
-                    <p className="text-xl text-gray-400 max-w-md mx-auto">We'd love to hear from you</p>
+                    <p className="text-xl font-bold text-black-400 max-w-md mx-auto">We'd love to hear from you</p>
                     <div className="w-16 h-1 bg-primary rounded-full mx-auto mt-6" />
                 </div>
-            </section>
 
             <section className="py-16 md:py-20 bg-white flex-grow">
                 <div className="container mx-auto px-4">
@@ -57,7 +54,7 @@ const Contact = () => {
                             {/* Right: Map */}
                             <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
                                 <iframe
-                                    src="https://maps.google.com/maps?q=16.490847,74.769178&z=17&output=embed"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3898.460817385956!2d74.76777360000001!3d16.4910221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc0c5002ac906e5%3A0xd2d2fa73fe7de92f!2sRaibag%20Taekwondo%20Centre%20-%20RTC!5e0!3m2!1sen!2sin!4v1743537987259!5m2!1sen!2sin"
                                     width="100%"
                                     height="420"
                                     style={{ border: 0 }}
