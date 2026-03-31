@@ -3,24 +3,88 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   body {
-    @apply bg-light text-secondary font-sans;
+    @apply bg-light text-secondary font-sans antialiased;
+  }
+  /* Subtle selection color */
+  ::selection {
+    @apply bg-primary/20 text-secondary;
   }
 }
 
-.btn-primary {
-  @apply bg-primary text-white px-6 py-2 rounded-md hover:bg-red-700 transition duration-300 font-semibold;
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-2 rounded-md hover:bg-red-700 transition-all duration-300 font-semibold hover:shadow-lg hover:shadow-primary/25 active:scale-[0.97];
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary px-6 py-2 rounded-md hover:bg-primary hover:text-white transition-all duration-300 font-semibold active:scale-[0.97];
+  }
+
+  .heading-section {
+    @apply text-3xl md:text-4xl font-extrabold text-center mb-12 relative pb-4 tracking-tight;
+  }
+
+  .heading-section::after {
+    content: '';
+    @apply absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-primary rounded-full;
+  }
+
+  /* Page header banner used on Gallery, Contact, etc. */
+  .page-header {
+    @apply bg-gradient-to-br from-secondary via-dark to-secondary text-white py-20 relative overflow-hidden;
+  }
+  .page-header::before {
+    content: '';
+    @apply absolute inset-0 opacity-[0.03];
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Floating card used for feature/stat cards */
+  .feature-card {
+    @apply p-6 bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 relative overflow-hidden;
+  }
+  .feature-card::before {
+    content: '';
+    @apply absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-red-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left;
+  }
 }
 
-.btn-outline {
-  @apply border-2 border-primary text-primary px-6 py-2 rounded-md hover:bg-primary hover:text-white transition duration-300 font-semibold;
+/* Smooth fade-in animation for page loads */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.heading-section {
-  @apply text-3xl md:text-4xl font-bold text-center mb-12 relative pb-4;
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
 }
 
-.heading-section::after {
-  content: '';
-  @apply absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-primary;
+/* Staggered animation delays */
+.animation-delay-100 { animation-delay: 100ms; }
+.animation-delay-200 { animation-delay: 200ms; }
+.animation-delay-300 { animation-delay: 300ms; }
+.animation-delay-400 { animation-delay: 400ms; }
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary/60;
 }
